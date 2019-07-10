@@ -4,7 +4,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="container-fluid text-center">
-                Dashboard
+                Dashboard view
             </div>
         );
     }
