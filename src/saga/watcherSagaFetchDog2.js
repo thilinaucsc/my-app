@@ -6,10 +6,12 @@ import * as types from '../constants/actionTypes';
 function* watcherSagaFetchDog2() {
     try {
         const response = yield call(getEmployee);
-        const dog = response.data.message;
+        // console.log('response: ', response);
+        const employee = response.data[0];
+        console.log('employee: ', employee);
 
         // dispatch a success action to the store with the new dog
-        yield put({ type: types.EMPLOYEE_SUCCESS, dog });
+        yield put({ type: types.EMPLOYEE_SUCCESS, employee });
     } catch (error) {
         // dispatch a failure action to the store with the error
         yield put({ type: types.EMPLOYEE_FAILURE, error });
@@ -17,6 +19,7 @@ function* watcherSagaFetchDog2() {
 }
 
 export function* watcherSaga2() {
+    // console.log('watcherSaga2 working: ', );
     yield takeLatest(types.EMPLOYEE_REQUEST, watcherSagaFetchDog2);
 }
 

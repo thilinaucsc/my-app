@@ -5,19 +5,20 @@ import "../App.css";
 import { connect } from "react-redux";
 import * as types from '../constants/actionTypes';
 
-class Main extends Component {
+
+class Main2 extends Component {
   render() {
-    const { fetching, dog, onRequestDog, error } = this.props;
+    const { fetching, employeeName, onRequestEmployee, error } = this.props;
 
     return (
       <div className="App">
         <header className="App-header">
-          <img src={dog || logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Saga</h1>
+          {employeeName? employeeName : (
+              <img src={logo} className="App-logo" alt="logo" />
+          )}
+          <h1 className="App-title">Welcome to Employee Saga</h1>
         </header>
-
-
-        {dog ? (
+        {employeeName ? (
           <p className="App-intro">Keep clicking for new dogs</p>
         ) : (
           <p className="App-intro">Replace the React icon with a dog!</p>
@@ -26,7 +27,7 @@ class Main extends Component {
         {fetching ? (
           <button disabled>Fetching...</button>
         ) : (
-          <button onClick={onRequestDog}>Request a Dog</button>
+          <button onClick={onRequestEmployee}>Request a Dog</button>
         )}
 
         {error && <p style={{ color: "red" }}>Uh oh - something went wrong!</p>}
@@ -38,17 +39,17 @@ class Main extends Component {
 const mapStateToProps = state => {
   return {
     fetching: state.fetching,
-    dog: state.reducer.dog,
+    employeeName: state.reducer2.employee_name,
     error: state.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestDog: () => dispatch({
-      type: types.API_CALL_REQUEST
+    onRequestEmployee: () => dispatch({
+      type: types.EMPLOYEE_REQUEST
     })
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main2);
