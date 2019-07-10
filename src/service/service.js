@@ -8,6 +8,7 @@ export const fetchDog = () => {
 };
 
 export const getEmployee = () => {
+    // console.log('works here: getEmployee ',);
   return axios({
       method: "get",
       url: "http://dummy.restapiexample.com/api/v1/employees"

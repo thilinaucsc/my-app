@@ -10,6 +10,7 @@ import DashboardPage from "../views/Dashboard.jsx";
 import TableList from "../views/TableList/TableList.jsx";*/
 import ViewCustomer from "../views/viewCustomer.jsx";
 import Main from "../component/main.jsx";
+import Main2 from "../component/main2.jsx";
 /*
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
@@ -34,11 +35,18 @@ const dashboardRoutes = [
         component: ViewCustomer
     },
     {
-        path: "/table",
+        path: "/dog",
         sidebarName: "Table List",
         navbarName: "Table List",
         icon: "content_paste",
         component: Main
+    },
+    {
+        path: "/employee",
+        sidebarName: "Table List",
+        navbarName: "Table List",
+        icon: "content_paste",
+        component: Main2
     },
     /*{
         path: "/table",

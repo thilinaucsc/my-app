@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import a from './reducer'
-import b from './reducer2'
+import {reducer} from './reducer'
+import {reducer2} from './reducer2'
 
 export const rootReducer = combineReducers({
-    a,
-    b
+    reducer,
+    reducer2
 });
 
 // export default index;
